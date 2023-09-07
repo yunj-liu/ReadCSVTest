@@ -209,7 +209,8 @@ FigureData getFigureDataHashMapFromCsvFile(QString sFoldName)
     QString sPathName;
     QString currend_path(QDir::currentPath());
     sPathName = currend_path + sFoldName;
-    //not confirm the path exist or not
+    //not confirm the path exist or not, if the dir is not exist, so the getDataTableFromCsvFile return empty dt, the dt's count is 0
+    //but key must in hash map, eg "figure1", etc, dt can be the empty, means it's count is zero
     //QDir dir(sPathName);
     //if(dir.exists())
     for(int i(1); i<=7; i++){
